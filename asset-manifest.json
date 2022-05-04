@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/adyen/static/js/main.5ab22f49.js",
+    "index.html": "/adyen/index.html",
+    "main.5ab22f49.js.map": "/adyen/static/js/main.5ab22f49.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5ab22f49.js"
+  ]
+}
