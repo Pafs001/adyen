@@ -69,7 +69,7 @@ export default function GravarPalavras() {
               recordWebcam.stop();
               setTimeout(() => {
                 recordWebcam.close();
-              }, 1200);
+              }, 1400);
               
             }}
             className='button'
@@ -82,7 +82,7 @@ export default function GravarPalavras() {
               recordWebcam.download();
               setTimeout(() => {
                 recordWebcam.close()
-              }, 1100);
+              }, 1400);
               setTimeout(() => {
                 navigate("/agradecemos");
               }, 2000);
