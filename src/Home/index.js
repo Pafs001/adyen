@@ -1,15 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './styles.css';
+import LogoTop from '../assets/home/TELA 1.svg'
 
 export default function Home() {
   return (
-    <div className='content'>
-      <div>
-        <h1>Como você imagina o futuro dos pagamentos?</h1>
-      </div>
-      
-      <div></div>
-      <div>
-        adyen
+    <div className='my-content'>
+      <div >
+        <img className='logo-top' src={LogoTop} alt="alt" />
       </div>
     </div>
   )

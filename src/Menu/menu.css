@@ -31,8 +31,12 @@
     color: #f1f1f1;
   }
   .btnClosed {
+    
     font-size:30px;
     cursor: pointer;
+  }
+  .topMenu {
+    position: absolute;
   }
   
   .sidenav .closebtn {
@@ -44,6 +48,8 @@
     color: #fff;
     cursor: pointer;
   }
+
+  
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
