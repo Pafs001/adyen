@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/adyen/static/js/main.5ab22f49.js",
+    "main.css": "/adyen/static/css/main.6df08932.css",
+    "main.js": "/adyen/static/js/main.9425d91d.js",
     "index.html": "/adyen/index.html",
-    "main.5ab22f49.js.map": "/adyen/static/js/main.5ab22f49.js.map"
+    "main.6df08932.css.map": "/adyen/static/css/main.6df08932.css.map",
+    "main.9425d91d.js.map": "/adyen/static/js/main.9425d91d.js.map"
   },
   "entrypoints": [
-    "static/js/main.5ab22f49.js"
+    "static/css/main.6df08932.css",
+    "static/js/main.9425d91d.js"
   ]
 }
