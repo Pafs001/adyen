@@ -42,13 +42,18 @@ export default function GravarPalavras() {
       <div className='row'>
         <div className='recorder-box'>
         
-        <label htmlFor="cpf">CPF</label><br />
+        
         <input
-          type="text" id="cpf" name="cpf" required
+          type="text" 
+          id="cpf" 
+          name="cpf" 
+          required
+          placeholder='Digite seu CPF aqui.'
           autoComplete={false}
           pattern="[0-9]"
           title="CPF apenas números."
-          onChange={ (data) => setOptions((preState) => ({...preState, filename: `fut_${data.target.value}`}))}
+          className='input-doc'
+          onChange={ (data) => setOptions((preState) => ({...preState, filename: `dep_${data.target.value}`}))}
         />
 
         <button
@@ -69,7 +74,7 @@ export default function GravarPalavras() {
               recordWebcam.stop();
               setTimeout(() => {
                 recordWebcam.close();
-              }, 1400);
+              }, 1800);
               
             }}
             className='button'
@@ -82,10 +87,10 @@ export default function GravarPalavras() {
               recordWebcam.download();
               setTimeout(() => {
                 recordWebcam.close()
-              }, 1400);
+              }, 1800);
               setTimeout(() => {
                 navigate("/agradecemos");
-              }, 2000);
+              }, 3000);
             }}
             className='button'
           >

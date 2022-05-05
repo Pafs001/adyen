@@ -42,12 +42,17 @@ export default function GravarDepoimento() {
       <div className='row'>
         <div className='recorder-box'>
         
-        <label htmlFor="cpf">CPF</label><br />
+        
         <input
-          type="text" id="cpf" name="cpf" required
+          type="text" 
+          id="cpf" 
+          name="cpf" 
+          required
+          placeholder='Digite seu CPF aqui.'
           autoComplete={false}
           pattern="[0-9]"
           title="CPF apenas números."
+          className='input-doc'
           onChange={ (data) => setOptions((preState) => ({...preState, filename: `dep_${data.target.value}`}))}
         />
 
@@ -69,7 +74,7 @@ export default function GravarDepoimento() {
               recordWebcam.stop();
               setTimeout(() => {
                 recordWebcam.close();
-              }, 1400);
+              }, 1800);
               
             }}
             className='button'
@@ -82,10 +87,10 @@ export default function GravarDepoimento() {
               recordWebcam.download();
               setTimeout(() => {
                 recordWebcam.close()
-              }, 1400);
+              }, 1800);
               setTimeout(() => {
                 navigate("/agradecemos");
-              }, 2000);
+              }, 3000);
             }}
             className='button'
           >

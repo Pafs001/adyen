@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'faktNormal';
+  src: local('faktNormal'), url(./assets/fonts/Fakt-Normal.otf) format('otf');
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+  font-family: 'faktNormal', sans-serif;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -24,6 +30,7 @@ time, mark, audio, video {
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    font-family: 'faktNormal', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -126,4 +133,14 @@ table {
   min-height: 80px;
   color: #FFF;
   font-size: 22px;
+}
+
+.input-doc {
+  background-color: #FFF;
+  min-width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 22px;
+  font-family: sans-serif;
 }

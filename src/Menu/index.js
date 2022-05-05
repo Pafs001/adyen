@@ -8,8 +8,8 @@ function Menu() {
     <>
     <div id={opemMenu == false ? "closedMenu" : "mySidenav"} className="sidenav">
       <span onClick={() => { setOpemMenu(false) }} className="closebtn">&times; </span>
-      <NavLink to="/adyen" >Home</NavLink>
-      <NavLink to="gravador" >Gravador</NavLink>
+      <NavLink to="/adyen" onClick={() => { setOpemMenu(false) }}>Home</NavLink>
+      <NavLink to="gravador" onClick={() => { setOpemMenu(false) }}>Gravador</NavLink>
     
     </div>
     <div className="topMenu">
