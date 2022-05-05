@@ -58,31 +58,44 @@ export default function GravarDepoimento() {
             onClick={recordWebcam.start}
             className='button'
           >
-            Start recording
+            Iniciar Gravação
           </button>
           <button
             disabled={recordWebcam.status !== CAMERA_STATUS.RECORDING}
-            onClick={ recordWebcam.stop}
+            onClick={() => {
+              recordWebcam.stop();
+              setTimeout(() => {
+                getRecordingFileHooks()
+              }, 6000);
+            }}
             className='button'
           >
-            Stop recording
+            Finalizar Gravação
           </button>
           <button
             disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
-            onClick={recordWebcam.download}
+            onClick={() => {
+              recordWebcam.download();
+              setTimeout(() => {
+                recordWebcam.close()
+              }, 6000);
+            }}
             className='button'
           >
             Download
           </button>
+          {/*
+            <button
+              disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+              onClick={getRecordingFileHooks}
+              className='button'
+            >
+              Preview
+            </button>
+          */}
+          
           <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
-            onClick={getRecordingFileHooks}
-            className='button'
-          >
-            Preview
-          </button>
-          <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            disabled={recordWebcam.status !== CAMERA_STATUS.CLOSED}
             onClick={recordWebcam.retake}
             className='button'
           >
@@ -92,9 +105,6 @@ export default function GravarDepoimento() {
       </div>
       <div className="demo-section">
         
-        <p>Camera status: {recordWebcam.status}</p>
-        <p>CPF: {OPTIONS.filename}</p>
-
         <video
           ref={recordWebcam.webcamRef}
           style={{

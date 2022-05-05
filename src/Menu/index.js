@@ -13,7 +13,7 @@ function Menu() {
       <NavLink to="agradecemos" >Agradecemos</NavLink>
     </div>
     <div className="topMenu">
-    <span className="btnClosed"  onClick={() => { setOpemMenu() }}>&#9776; open</span>
+    <span className="btnClosed"  onClick={() => { setOpemMenu() }}>&#9776;</span>
     </div>
     
     </>

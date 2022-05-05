@@ -93,6 +93,10 @@ table {
   align-items: center;
   justify-content: center;
   width: 510px;
+  height: 480px;
+  background-color: #0abf53;
+  border-radius: 8px;
+  margin: 0 16px 0 0;
 }
 
 .button {
@@ -109,5 +113,5 @@ table {
 }
 
 .text-button {
-  
+  font-size: 28px;
 }
