@@ -66,11 +66,12 @@ table {
 }
 .content {
   height: 100vh;
+  width: 80%;
+  margin: auto;
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
-  top: -10vh;
 }
 
 .primary-bg {
@@ -79,6 +80,10 @@ table {
 
 .secondary-bg {
   background-color: #e7edea;
+}
+
+.green-bg {
+  background-color: #0abf53;
 }
 
 .row {
@@ -113,6 +118,12 @@ table {
   margin: 16px 0 16px 0;
 }
 
-.text-button {
-  font-size: 28px;
+.box-text {
+  background-color: rgba( 0, 0, 0, 0.2);
+  margin-top: 16px;
+  padding: 34px;
+  border-radius: 8px;
+  min-height: 80px;
+  color: #FFF;
+  font-size: 22px;
 }
