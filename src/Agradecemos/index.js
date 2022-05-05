@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Agradecemos() {
   return (
-    <div>Agradecemos</div>
+    <div className='content'>
+      Agradecemos
+    </div>
   )
 }

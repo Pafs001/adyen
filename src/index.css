@@ -65,6 +65,38 @@ table {
   padding: 0 8px 0 8px;
 }
 .content {
-  background-color: #20c997;
   height: 90vh;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-bg {
+  background-color: #20c997;
+}
+
+.secondary-bg {
+  background-color: #e7edea;
+}
+
+.row {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.recorder-box {
+  padding: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 510px;
+}
+
+.button {
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #FFF;
 }

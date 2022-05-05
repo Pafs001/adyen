@@ -28,7 +28,22 @@ export default function GravarDepoimento() {
   };
 
   return (
-    <div>
+    <div className='content secondary-bg'>
+      <div className='row'>
+        <div className='recorder-box'>
+        <button
+            disabled={
+              recordWebcam.status === CAMERA_STATUS.OPEN ||
+              recordWebcam.status === CAMERA_STATUS.RECORDING ||
+              recordWebcam.status === CAMERA_STATUS.PREVIEW
+            }
+            onClick={recordWebcam.open}
+            className='button'
+          >
+            Open camera
+          </button>
+        </div>
+      </div>
       <div className="demo-section">
         <h1>Hooks demo</h1>
         <p>Camera status: {recordWebcam.status}</p>
