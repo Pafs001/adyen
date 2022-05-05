@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/adyen/static/css/main.7d85100e.css",
-    "main.js": "/adyen/static/js/main.d84252be.js",
+    "main.css": "/adyen/static/css/main.08218fec.css",
+    "main.js": "/adyen/static/js/main.c6eb42cb.js",
     "static/media/TELA 1.svg": "/adyen/static/media/TELA 1.ae99c2a9d4e901f98845b958e91dfc1b.svg",
     "static/media/TELA 4.svg": "/adyen/static/media/TELA 4.50abb82862ab2517c09dd4943b3f73a0.svg",
     "index.html": "/adyen/index.html",
-    "main.7d85100e.css.map": "/adyen/static/css/main.7d85100e.css.map",
-    "main.d84252be.js.map": "/adyen/static/js/main.d84252be.js.map"
+    "main.08218fec.css.map": "/adyen/static/css/main.08218fec.css.map",
+    "main.c6eb42cb.js.map": "/adyen/static/js/main.c6eb42cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d85100e.css",
-    "static/js/main.d84252be.js"
+    "static/css/main.08218fec.css",
+    "static/js/main.c6eb42cb.js"
   ]
 }
