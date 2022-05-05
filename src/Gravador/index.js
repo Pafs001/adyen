@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function Gravador() {
   return (
-    <div>
+    <div className='content'>
       <div>
         <div>
-          <Link to="/agradecemos">Gravar depoimento</Link>
+          <Link to="/depoimento">Gravar depoimento</Link>
           <p>Como serão os pagamentos do futuro? Divida a sua opinião com a gente em até 1 minuto.</p>
         </div>
         <div>
