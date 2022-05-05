@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/adyen/static/css/main.11f3db84.css",
-    "main.js": "/adyen/static/js/main.6119fb49.js",
+    "main.js": "/adyen/static/js/main.7964c219.js",
     "static/media/TELA 1.svg": "/adyen/static/media/TELA 1.ae99c2a9d4e901f98845b958e91dfc1b.svg",
     "index.html": "/adyen/index.html",
     "main.11f3db84.css.map": "/adyen/static/css/main.11f3db84.css.map",
-    "main.6119fb49.js.map": "/adyen/static/js/main.6119fb49.js.map"
+    "main.7964c219.js.map": "/adyen/static/js/main.7964c219.js.map"
   },
   "entrypoints": [
     "static/css/main.11f3db84.css",
-    "static/js/main.6119fb49.js"
+    "static/js/main.7964c219.js"
   ]
 }
