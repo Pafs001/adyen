@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './Header';
+import Menu from './Menu';
 import Gravador from './Gravador';
 import Agradecemos from './Agradecemos';
 import Home from './Home';
@@ -8,7 +8,7 @@ import NotFound from './NotFound';
 export const App = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <Menu />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="agradecemos" element={<Agradecemos />} />
