@@ -1,12 +1,9 @@
 #mySidenav {
     width: 250px;
 }
-
 #closedMenu {
     width: 0;
-    color: #20c997;
 }
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -33,6 +30,7 @@
     color: #f1f1f1;
   }
   .btnClosed {
+    
     font-size:30px;
     cursor: pointer;
   }
