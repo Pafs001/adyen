@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Gravador() {
   return (
-    <div className='content primary-bg'>
+    <div className='content primary-bg '>
       <div className='row'>
         <div className='recorder-box'>
           <Link to="/depoimento" className='button'>Gravar depoimento</Link>

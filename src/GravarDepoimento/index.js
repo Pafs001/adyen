@@ -26,6 +26,12 @@ export default function GravarDepoimento() {
   const getRecordingFileRenderProp = async (blob) => {
     console.log({ blob });
   };
+  React.useEffect(() => {
+    recordWebcam.open();
+    setTimeout(() => {
+      recordWebcam.retake();  
+    }, 1000);
+  }, []);
 
   return (
     <div className='content secondary-bg'>
@@ -33,75 +39,49 @@ export default function GravarDepoimento() {
         <div className='recorder-box'>
         <button
             disabled={
-              recordWebcam.status === CAMERA_STATUS.OPEN ||
-              recordWebcam.status === CAMERA_STATUS.RECORDING ||
-              recordWebcam.status === CAMERA_STATUS.PREVIEW
-            }
-            onClick={recordWebcam.open}
-            className='button'
-          >
-            Open camera
-          </button>
-        </div>
-      </div>
-      <div className="demo-section">
-        <h1>Hooks demo</h1>
-        <p>Camera status: {recordWebcam.status}</p>
-        <div>
-          <button
-            disabled={
-              recordWebcam.status === CAMERA_STATUS.OPEN ||
-              recordWebcam.status === CAMERA_STATUS.RECORDING ||
-              recordWebcam.status === CAMERA_STATUS.PREVIEW
-            }
-            onClick={recordWebcam.open}
-          >
-            Open camera
-          </button>
-          <button
-            disabled={
-              recordWebcam.status === CAMERA_STATUS.CLOSED ||
-              recordWebcam.status === CAMERA_STATUS.PREVIEW
-            }
-            onClick={recordWebcam.close}
-          >
-            Close camera
-          </button>
-          <button
-            disabled={
               recordWebcam.status === CAMERA_STATUS.CLOSED ||
               recordWebcam.status === CAMERA_STATUS.RECORDING ||
               recordWebcam.status === CAMERA_STATUS.PREVIEW
             }
             onClick={recordWebcam.start}
+            className='button'
           >
             Start recording
           </button>
           <button
             disabled={recordWebcam.status !== CAMERA_STATUS.RECORDING}
-            onClick={recordWebcam.stop}
+            onClick={ recordWebcam.stop}
+            className='button'
           >
             Stop recording
           </button>
           <button
             disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
-            onClick={recordWebcam.retake}
-          >
-            Retake
-          </button>
-          <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
             onClick={recordWebcam.download}
+            className='button'
           >
             Download
           </button>
           <button
             disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
-            onClick={getRecordingFileHooks}
+            onClick={recordWebcam.retake}
+            className='button'
           >
-            Get recording
+            Nova gravação
+          </button>
+          <button
+            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            onClick={getRecordingFileHooks}
+            className='button'
+          >
+            Preview
           </button>
         </div>
+      </div>
+      <div className="demo-section">
+        
+        <p>Camera status: {recordWebcam.status}</p>
+        
 
         <video
           ref={recordWebcam.webcamRef}
@@ -124,67 +104,6 @@ export default function GravarDepoimento() {
           }}
           autoPlay
           loop
-        />
-      </div>
-      <div className="demo-section">
-        <h1>Component demo</h1>
-        <RecordWebcam options={OPTIONS} />
-      </div>
-      <div className="demo-section">
-        <RecordWebcam
-          options={OPTIONS}
-          render={(props) => {
-            const showOpenCamera =
-              props.status !== CAMERA_STATUS.OPEN &&
-              props.status !== CAMERA_STATUS.RECORDING &&
-              props.status !== CAMERA_STATUS.PREVIEW;
-            const showCloseCamera =
-              props.status === CAMERA_STATUS.OPEN || CAMERA_STATUS.RECORDING;
-            const showStart = props.status === CAMERA_STATUS.OPEN;
-            const showStop = props.status === CAMERA_STATUS.RECORDING;
-            const showRetake = props.status === CAMERA_STATUS.PREVIEW;
-            const showDownload = props.status === CAMERA_STATUS.PREVIEW;
-
-            return (
-              <div>
-                <h1>Component render prop demo</h1>
-                <p>Camera status: {props.status}</p>
-                <div>
-                  <button disabled={!showOpenCamera} onClick={props.openCamera}>
-                    Open camera
-                  </button>
-                  <button
-                    disabled={showOpenCamera || showRetake || !showCloseCamera}
-                    onClick={props.closeCamera}
-                  >
-                    Close camera
-                  </button>
-
-                  <button disabled={!showStart} onClick={props.start}>
-                    Start recording
-                  </button>
-                  <button disabled={!showStop} onClick={props.stop}>
-                    Stop recording
-                  </button>
-                  <button disabled={!showRetake} onClick={props.retake}>
-                    Retake
-                  </button>
-                  <button disabled={!showDownload} onClick={props.download}>
-                    Download
-                  </button>
-                  <button
-                    disabled={!showDownload}
-                    onClick={async () => {
-                      const blob = await props.getRecording();
-                      getRecordingFileRenderProp(blob);
-                    }}
-                  >
-                    Get recording blob
-                  </button>
-                </div>
-              </div>
-            );
-          }}
         />
       </div>
     </div>
