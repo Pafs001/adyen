@@ -3,6 +3,7 @@
 }
 #closedMenu {
     width: 0;
+    color: #20c997;
 }
 .sidenav {
     height: 100%;
@@ -11,7 +12,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #20c997;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -21,7 +22,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #00112c;
     display: block;
     transition: 0.3s;
   }
