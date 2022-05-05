@@ -12,13 +12,8 @@ function Menu() {
       <NavLink to="gravador" >Gravador</NavLink>
       <NavLink to="agradecemos" >Agradecemos</NavLink>
     </div>
-<<<<<<< HEAD
-    <div className="topMenu">
-    <span className="btnClosed"  onClick={() => { setOpemMenu() }}>&#9776; open</span>
-=======
     <div>
     <span className="btnClosed"  onClick={() => { setOpemMenu() }}>&#9776;</span>
->>>>>>> refs/remotes/origin/main
     </div>
     
     </>
