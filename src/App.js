@@ -11,7 +11,7 @@ export const App = () => {
     <BrowserRouter>
       <Menu />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/adyen" element={<Home />} />
         <Route path="agradecemos" element={<Agradecemos />} />
         <Route path="gravador" element={<Gravador />} />
         <Route path="depoimento" element={<GravarDepoimento />} />
