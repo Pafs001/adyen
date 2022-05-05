@@ -12,7 +12,7 @@ export default function Gravador() {
           </div>        
         </div>
         <div className='recorder-box'>
-          <Link to="/agradecemos" className='button'>Gravar palavras-chave</Link>
+          <Link to="/palavras" className='button'>Gravar palavras-chave</Link>
           <div className='box-text'>
             O que você pensa sobre os pagamentos do futuro? Compartilhe as palavras que vem a sua cabeça.
           </div>

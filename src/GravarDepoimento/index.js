@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {
   RecordWebcam,
   useRecordWebcam,
@@ -7,12 +6,15 @@ import {
 } from "react-record-webcam";
 
 import "../index.css";
-
+import {
+  useNavigate,
+} from "react-router-dom";
 
 
 export default function GravarDepoimento() {
+  let navigate = useNavigate();
   const [OPTIONS, setOptions] = React.useState({
-    filename: "test-filename",
+    filename: " ",
     fileType: "mp4",
     recordingLength: 60,
     width: 1920,
@@ -51,6 +53,7 @@ export default function GravarDepoimento() {
 
         <button
             disabled={
+              OPTIONS.filename === " " ||
               recordWebcam.status === CAMERA_STATUS.CLOSED ||
               recordWebcam.status === CAMERA_STATUS.RECORDING ||
               recordWebcam.status === CAMERA_STATUS.PREVIEW
@@ -65,24 +68,28 @@ export default function GravarDepoimento() {
             onClick={() => {
               recordWebcam.stop();
               setTimeout(() => {
-                getRecordingFileHooks()
-              }, 6000);
+                recordWebcam.close();
+              }, 1200);
+              
             }}
             className='button'
           >
             Finalizar Gravação
           </button>
           <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            // disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
             onClick={() => {
               recordWebcam.download();
               setTimeout(() => {
                 recordWebcam.close()
-              }, 6000);
+              }, 1100);
+              setTimeout(() => {
+                navigate("/agradecemos");
+              }, 2000);
             }}
             className='button'
           >
-            Download
+            Enviar vídeo
           </button>
           {/*
             <button
@@ -92,15 +99,18 @@ export default function GravarDepoimento() {
             >
               Preview
             </button>
-          */}
-          
-          <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.CLOSED}
-            onClick={recordWebcam.retake}
-            className='button'
-          >
+
+            <button
+              disabled={recordWebcam.status !== CAMERA_STATUS.CLOSED}
+              onClick={recordWebcam.retake}  
+              className='button'
+            >
             Nova gravação
           </button>
+            
+          */}
+          
+
         </div>
       </div>
       <div className="demo-section">
