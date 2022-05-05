@@ -7,7 +7,9 @@ function Menu() {
   return (
     <>
     <div id={opemMenu == false ? "closedMenu" : "mySidenav"} className="sidenav">
-      <span onClick={() => { setOpemMenu(false) }} className="closebtn">&times; </span>
+      <div className="topMenu">
+        <span className="btnClosed" onClick={() => { setOpemMenu() }}>&#9776;</span>
+      </div>
       <NavLink to="/" >Home</NavLink>
       <NavLink to="gravador" >Gravador</NavLink>
       <NavLink to="agradecemos" >Agradecemos</NavLink>

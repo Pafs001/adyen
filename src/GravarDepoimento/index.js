@@ -8,14 +8,16 @@ import {
 
 import "../index.css";
 
-const OPTIONS = {
-  filename: "test-filename",
-  fileType: "mp4",
-  width: 1920,
-  height: 1080
-};
+
 
 export default function GravarDepoimento() {
+  const [OPTIONS, setOptions] = React.useState({
+    filename: "test-filename",
+    fileType: "mp4",
+    recordingLength: 60,
+    width: 1920,
+    height: 1080
+  });
   const recordWebcam = useRecordWebcam(OPTIONS);
 
   const getRecordingFileHooks = async () => {
@@ -37,6 +39,16 @@ export default function GravarDepoimento() {
     <div className='content secondary-bg'>
       <div className='row'>
         <div className='recorder-box'>
+        
+        <label htmlFor="cpf">CPF</label><br />
+        <input
+          type="text" id="cpf" name="cpf" required
+          autoComplete={false}
+          pattern="[0-9]"
+          title="CPF apenas números."
+          onChange={ (data) => setOptions((preState) => ({...preState, filename: `dep_${data.target.value}`}))}
+        />
+
         <button
             disabled={
               recordWebcam.status === CAMERA_STATUS.CLOSED ||
@@ -64,24 +76,24 @@ export default function GravarDepoimento() {
           </button>
           <button
             disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
-            onClick={recordWebcam.retake}
-            className='button'
-          >
-            Nova gravação
-          </button>
-          <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
             onClick={getRecordingFileHooks}
             className='button'
           >
             Preview
+          </button>
+          <button
+            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            onClick={recordWebcam.retake}
+            className='button'
+          >
+            Nova gravação
           </button>
         </div>
       </div>
       <div className="demo-section">
         
         <p>Camera status: {recordWebcam.status}</p>
-        
+        <p>CPF: {OPTIONS.filename}</p>
 
         <video
           ref={recordWebcam.webcamRef}
