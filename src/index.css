@@ -20,9 +20,9 @@ time, mark, audio, video {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
@@ -81,6 +81,7 @@ table {
 }
 
 .row {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
@@ -94,9 +95,18 @@ table {
 }
 
 .button {
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 60px;
   border-radius: 8px;
   background-color: #FFF;
+  min-width: 100%;
+  color: #00112c;
+  font-weight: bold;
+  margin: 16px 0 16px 0;
+}
+
+.text-button {
+  
 }
