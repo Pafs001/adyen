@@ -10,6 +10,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 export default function GravarDepoimento() {
   let navigate = useNavigate();
@@ -22,6 +24,37 @@ export default function GravarDepoimento() {
   });
   const recordWebcam = useRecordWebcam(OPTIONS);
 
+  const numberInvalids =  [
+    '000.000.000-00',
+    '111.111.111-11',
+    '222-222-222-22',
+    '333.333.333-33',
+    '444.444.444-44',
+    '555.555.555-55',
+    '666.666.666-66',
+    '888.888.888-88',
+    '999.999.999-99'
+  ];
+
+  const schema = Yup.object().shape({
+    cpf: Yup.string()
+    .notOneOf(numberInvalids, 'Esse número não pode ser usado.')
+    .matches(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/,  "Formato válido XXX.XXX.XXX-XX")
+    .required('É necessário informar o CPF no formato válido.'),
+  });
+
+  const initialValues = {
+    cpf: '',
+  };
+  const formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: schema,
+    onSubmit: (values) => {
+      console.log(values)
+      setOptions((preState) => ({...preState, filename: `dep_${values.cpf}`}))
+    }
+  });
+
   const getRecordingFileHooks = async () => {
     const blob = await recordWebcam.getRecording();
     console.log({ blob });
@@ -30,6 +63,7 @@ export default function GravarDepoimento() {
   const getRecordingFileRenderProp = async (blob) => {
     console.log({ blob });
   };
+
   React.useEffect(() => {
     recordWebcam.open();
     setTimeout(() => {
@@ -41,21 +75,36 @@ export default function GravarDepoimento() {
     <div className='content secondary-bg'>
       <div className='row'>
         <div className='recorder-box'>
+          <form onSubmit={formik.handleSubmit}>
+            
+            <div className='form-row'>
+              <input
+                autocomplete="off"
+                id="cpf"
+                name="cpf"
+                type="text"
+                className='input-doc'
+                placeholder='Digite o CPF Ex: 000.000.000-00'
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.cpf}
+              />
+              <button className='sm-button' type="submit">Submit</button>
+            </div>
+            
+            <p className='input-error'> 
+              {
+                formik.errors.cpf && formik.touched.cpf 
+                ? formik.errors.cpf : null
+              }
+            </p>
+            
+          </form>
         
-        
-        <input
-          type="text" 
-          id="cpf" 
-          name="cpf" 
-          required
-          placeholder='Digite seu CPF aqui.'
-          autoComplete={false}
-          pattern="[0-9]"
-          title="CPF apenas números."
-          className='input-doc'
-          onChange={ (data) => setOptions((preState) => ({...preState, filename: `dep_${data.target.value}`}))}
-        />
 
+        
+          
+        
         <button
             disabled={
               OPTIONS.filename === " " ||
@@ -117,8 +166,7 @@ export default function GravarDepoimento() {
           
 
         </div>
-      </div>
-      <div className="demo-section">
+        <div className="demo-section">
         
         <video
           ref={recordWebcam.webcamRef}
@@ -131,18 +179,25 @@ export default function GravarDepoimento() {
             }`
           }}
           autoPlay
+          muted
         />
-        <video
-          ref={recordWebcam.previewRef}
-          style={{
-            display: `${
-              recordWebcam.status === CAMERA_STATUS.PREVIEW ? "block" : "none"
-            }`
-          }}
-          autoPlay
-          loop
-        />
+        {/*
+          <video
+            ref={recordWebcam.previewRef}
+            style={{
+              display: `${
+                recordWebcam.status === CAMERA_STATUS.PREVIEW ? "block" : "none"
+              }`
+            }}
+            autoPlay
+            loop
+            controls
+          />
+        */}
+        
       </div>
+      </div>
+      
     </div>
   );
 };

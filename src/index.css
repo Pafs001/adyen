@@ -76,6 +76,7 @@ table {
   width: 80%;
   margin: auto;
   display: flex;
+  flex-direction: column;
   flex: 1;
   align-items: center;
   justify-content: center;
@@ -135,12 +136,33 @@ table {
   font-size: 22px;
 }
 
+.input-error {
+  color: #dc3545;
+  font-weight: bold;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+
 .input-doc {
   background-color: #FFF;
-  min-width: 100%;
+  min-width: 78%;
   height: 60px;
   border-radius: 8px;
   padding: 8px;
   font-size: 22px;
   font-family: sans-serif;
+}
+
+.sm-button {
+  background-color: #FFF;
+  height: 60px;
+  font-size: 22px;
+  min-width: 20%;
+  font-family: sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
 }
