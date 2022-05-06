@@ -10,7 +10,7 @@ import NotFound from './NotFound';
 export const App = () => {
   return (
     <BrowserRouter>
-      <Menu />
+      
       <Routes>
         <Route path="/adyen" element={<Home />} />
         <Route path="agradecemos" element={<Agradecemos />} />

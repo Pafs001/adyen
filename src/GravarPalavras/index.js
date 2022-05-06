@@ -89,7 +89,7 @@ export default function GravarPalavras() {
                 onBlur={formik.handleBlur}
                 value={formik.values.cpf}
               />
-              <button className='sm-button' type="submit">Submit</button>
+              <button className='sm-button' type="submit">OK</button>
             </div>
             
             <p className='input-error'> 
@@ -131,7 +131,7 @@ export default function GravarPalavras() {
             Finalizar Gravação
           </button>
           <button
-            // disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
             onClick={() => {
               recordWebcam.download();
               setTimeout(() => {
@@ -166,8 +166,8 @@ export default function GravarPalavras() {
           
 
         </div>
-      </div>
-      <div className="demo-section">
+        <div className="demo-section">
+        {recordWebcam.status === 'RECORDING' ? <div className='rec-indicator'>REC</div> : null}
         
         <video
           ref={recordWebcam.webcamRef}
@@ -197,6 +197,8 @@ export default function GravarPalavras() {
         */}
         
       </div>
+      </div>
+      
     </div>
   );
 };

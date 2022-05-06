@@ -89,7 +89,7 @@ export default function GravarDepoimento() {
                 onBlur={formik.handleBlur}
                 value={formik.values.cpf}
               />
-              <button className='sm-button' type="submit">Submit</button>
+              <button className='sm-button' type="submit">OK</button>
             </div>
             
             <p className='input-error'> 
@@ -131,7 +131,7 @@ export default function GravarDepoimento() {
             Finalizar Gravação
           </button>
           <button
-            // disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
             onClick={() => {
               recordWebcam.download();
               setTimeout(() => {
@@ -167,6 +167,7 @@ export default function GravarDepoimento() {
 
         </div>
         <div className="demo-section">
+        {recordWebcam.status === 'RECORDING' ? <div className='rec-indicator'>REC</div> : null}
         
         <video
           ref={recordWebcam.webcamRef}
