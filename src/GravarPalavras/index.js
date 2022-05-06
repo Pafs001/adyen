@@ -66,7 +66,7 @@ export default function GravarPalavras() {
     validationSchema: schema,
     onSubmit: (values) => {
       console.log(values)
-      setOptions((preState) => ({...preState, filename: `dep_${values.cpf}`}))
+      setOptions((preState) => ({...preState, filename: `fut_${values.cpf}`}))
     }
   });
 
