@@ -18,12 +18,13 @@ export default function GravarPalavras() {
   const [OPTIONS, setOptions] = React.useState({
     filename: " ",
     fileType: "mp4",
-    recordingLength: 60,
+    recordingLength: 63,
     width: 1920,
     height: 1080
   });
   const recordWebcam = useRecordWebcam(OPTIONS);
-
+  const [isReady, setIsReady] = React.useState(false);
+  
   const numberInvalids =  [
     '000.000.000-00',
     '111.111.111-11',
@@ -43,9 +44,23 @@ export default function GravarPalavras() {
     .required('É necessário informar o CPF no formato válido.'),
   });
 
-  const initialValues = {
-    cpf: '',
+  const initialValues = { cpf: ''};
+  let [count, setCount] = React.useState(60);
+  
+  const myRef = React.useRef(null);
+  myRef.current = () => {
+    setCount((count) => count - 1);
   };
+
+  React.useEffect(() => {
+    if(isReady){
+      let id = setInterval(() => {
+        myRef.current();
+      }, 1000);
+      return () => clearInterval(id);
+    }
+  }, [isReady]);
+
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: schema,
@@ -79,7 +94,8 @@ export default function GravarPalavras() {
             
             <div className='form-row'>
               <input
-                autocomplete="off"
+                disabled={OPTIONS.filename !== " "}
+                autoComplete="off"
                 id="cpf"
                 name="cpf"
                 type="text"
@@ -89,7 +105,7 @@ export default function GravarPalavras() {
                 onBlur={formik.handleBlur}
                 value={formik.values.cpf}
               />
-              <button className='sm-button' type="submit">OK</button>
+              <button disabled={OPTIONS.filename !== " "} className='sm-button' type="submit">OK</button>
             </div>
             
             <p className='input-error'> 
@@ -112,13 +128,21 @@ export default function GravarPalavras() {
               recordWebcam.status === CAMERA_STATUS.RECORDING ||
               recordWebcam.status === CAMERA_STATUS.PREVIEW
             }
-            onClick={recordWebcam.start}
+            onClick={() => {
+              recordWebcam.start();
+              setInterval(() => {
+                setIsReady(true);
+              }, 3100);
+            }}
             className='button'
           >
             Iniciar Gravação
           </button>
           <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.RECORDING}
+            disabled={
+              !isReady
+              
+            }
             onClick={() => {
               recordWebcam.stop();
               setTimeout(() => {
@@ -131,9 +155,10 @@ export default function GravarPalavras() {
             Finalizar Gravação
           </button>
           <button
-            disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
+            disabled={recordWebcam.status !== CAMERA_STATUS.CLOSED}
             onClick={() => {
               recordWebcam.download();
+              
               setTimeout(() => {
                 recordWebcam.close()
               }, 1800);
@@ -167,7 +192,7 @@ export default function GravarPalavras() {
 
         </div>
         <div className="demo-section">
-        {recordWebcam.status === 'RECORDING' ? <div className='rec-indicator'>REC</div> : null}
+        {recordWebcam.status === 'RECORDING' ? <div className='rec-indicator'>{count}</div> : null}
         
         <video
           ref={recordWebcam.webcamRef}

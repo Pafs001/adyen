@@ -113,6 +113,20 @@ table {
   margin: 18px 0 18px 0;
 }
 
+.text-home-bottom {
+  font-size: 48px;
+  line-height: 58px;
+  margin: 18px 0 18px 0;
+}
+
+.text-home-next {
+  border: 1px solid #0abf53;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 32px;
+  text-align: center;
+  margin: 18px 0 18px 0;
+}
 .span-light {
   font-weight: lighter;
 }
@@ -201,6 +215,17 @@ table {
   border-radius: 8px;
 }
 
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 
 .rec-indicator {
   position: absolute;
@@ -213,4 +238,6 @@ table {
   align-items: center;
   justify-content: center;
   color: #FFF;
+  animation: animate 1s linear infinite;
 }
+

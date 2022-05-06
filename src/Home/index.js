@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import './styles.css';
 import Logo from '../assets/home/LOGOADYEN.svg'
 import homevideo from '../assets/videos/mov_bbb.mp4'
@@ -20,6 +20,9 @@ export default function Home() {
       
       <div className='text-home-bottom color-primary'>
         Como você imagina o futuro dos pagamentos?
+      </div>
+      <div className='text-home-next'>
+        <NavLink className={"color-primary"} to="/gravador" >Responder</NavLink>
       </div>
       <div>
         <img className='logo-adyen' src={Logo} alt="Adyen" />
