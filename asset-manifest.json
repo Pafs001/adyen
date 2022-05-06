@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/adyen/static/css/main.69cb233d.css",
-    "main.js": "/adyen/static/js/main.85d74534.js",
-    "static/media/mov_bbb.mp4": "/adyen/static/media/mov_bbb.2c92d01256c8f29e1b68.mp4",
+    "main.css": "/adyen/static/css/main.3a12a5f9.css",
+    "main.js": "/adyen/static/js/main.be24250d.js",
+    "static/media/mov_bbb.mp4": "/adyen/static/media/mov_bbb.d32370e30caf49b2de01.mp4",
     "static/media/Fakt-Normal.otf": "/adyen/static/media/Fakt-Normal.d77cf6760641cd3d9686.otf",
     "static/media/TELA 4.svg": "/adyen/static/media/TELA 4.50abb82862ab2517c09dd4943b3f73a0.svg",
     "static/media/LOGOADYEN.svg": "/adyen/static/media/LOGOADYEN.f97c0fd2a191f05c38cd9459b85f0a72.svg",
     "index.html": "/adyen/index.html",
-    "main.69cb233d.css.map": "/adyen/static/css/main.69cb233d.css.map",
-    "main.85d74534.js.map": "/adyen/static/js/main.85d74534.js.map"
+    "main.3a12a5f9.css.map": "/adyen/static/css/main.3a12a5f9.css.map",
+    "main.be24250d.js.map": "/adyen/static/js/main.be24250d.js.map"
   },
   "entrypoints": [
-    "static/css/main.69cb233d.css",
-    "static/js/main.85d74534.js"
+    "static/css/main.3a12a5f9.css",
+    "static/js/main.be24250d.js"
   ]
 }
