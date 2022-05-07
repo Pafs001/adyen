@@ -99,18 +99,18 @@ table {
 .text-home-top {
   font-size: 64px;
   line-height: 74px;
-  margin: 0 0 18px 0;
+  margin: 0 0 10px 0;
 }
 
 .logo-adyen{
   height: 40px;
-  margin: 32px 0 0 0;
+  margin: 24px 0 0 0;
 }
 
 .text-home-bottom {
   font-size: 48px;
   line-height: 58px;
-  margin: 18px 0 18px 0;
+  margin: 10px 0 10px 0;
 }
 
 .text-home-bottom {
@@ -153,7 +153,7 @@ table {
   padding: 32px;
   align-items: center;
   justify-content: center;
-  width: 510px;
+  width: 400px;
   height: 480px;
   background-color: #0abf53;
   border-radius: 8px;
@@ -172,6 +172,13 @@ table {
   font-weight: bold;
   font-size: 28px;
   margin: 16px 0 16px 0;
+}
+
+.button:disabled,
+.button[disabled]{
+  border: 1px solid rgba(195, 195, 195, 0.3);
+  background-color: #fff;
+  color: rgba(195, 195, 195, 0.3);
 }
 
 .box-text {
@@ -213,6 +220,13 @@ table {
   font-family: sans-serif;
   font-weight: bold;
   border-radius: 8px;
+}
+
+.sm-button:disabled,
+.sm-button[disabled]{
+  border: 1px solid rgba(195, 195, 195, 0.3);
+  background-color: #fff;
+  color: rgba(195, 195, 195, 0.3);
 }
 
 @keyframes animate{

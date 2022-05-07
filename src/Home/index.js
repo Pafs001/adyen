@@ -13,7 +13,7 @@ export default function Home() {
       
 
       <div>
-        <video width="800" autoPlay onEnded={() => navigate("/gravador")}>
+        <video width="800" controls onEnded={() => navigate("/gravador")}>
           <source src={homevideo} type="video/mp4" />
         </video>
       </div>

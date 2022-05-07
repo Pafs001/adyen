@@ -26,23 +26,29 @@ export default function GravarPalavras() {
   const [isReady, setIsReady] = React.useState(false);
   
   const numberInvalids =  [
-    '000.000.000-00',
-    '111.111.111-11',
-    '222-222-222-22',
-    '333.333.333-33',
-    '444.444.444-44',
-    '555.555.555-55',
-    '666.666.666-66',
-    '888.888.888-88',
-    '999.999.999-99'
+    '00000000000',
+    '11111111111',
+    '22222222222',
+    '33333333333',
+    '44444444444',
+    '55555555555',
+    '66666666666',
+    '88888888888',
+    '99999999999'
   ];
 
   const schema = Yup.object().shape({
     cpf: Yup.string()
+    .typeError('Informe o CPF usando apenas números.')
     .notOneOf(numberInvalids, 'Esse número não pode ser usado.')
-    .matches(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/,  "Formato válido XXX.XXX.XXX-XX")
+    .matches(/^\s*-?[0-9]{11}\s*$/,  "Formato válido XXXXXXXXXXX")
     .required('É necessário informar o CPF no formato válido.'),
   });
+
+  const formatData = (data) => {
+    data = data.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    return data;
+  }
 
   const initialValues = { cpf: ''};
   let [count, setCount] = React.useState(60);
@@ -65,8 +71,8 @@ export default function GravarPalavras() {
     initialValues: initialValues,
     validationSchema: schema,
     onSubmit: (values) => {
-      console.log(values)
-      setOptions((preState) => ({...preState, filename: `fut_${values.cpf}`}))
+      console.log(formatData(values.cpf));
+      setOptions((preState) => ({...preState, filename: `fut_${formatData(values.cpf)}`}))
     }
   });
 
@@ -100,7 +106,7 @@ export default function GravarPalavras() {
                 name="cpf"
                 type="text"
                 className='input-doc'
-                placeholder='Digite o CPF Ex: 000.000.000-00'
+                placeholder='Digite o CPF'
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.cpf}
@@ -140,8 +146,8 @@ export default function GravarPalavras() {
           </button>
           <button
             disabled={
-              !isReady
-              
+              !isReady ||
+              recordWebcam.status === CAMERA_STATUS.CLOSED
             }
             onClick={() => {
               recordWebcam.stop();
