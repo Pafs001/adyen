@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/adyen/static/css/main.3a12a5f9.css",
-    "main.js": "/adyen/static/js/main.908d35a0.js",
+    "main.css": "/adyen/static/css/main.b1cbb5fa.css",
+    "main.js": "/adyen/static/js/main.d865340d.js",
     "static/media/mov_bbb.mp4": "/adyen/static/media/mov_bbb.d32370e30caf49b2de01.mp4",
     "static/media/Fakt-Normal.otf": "/adyen/static/media/Fakt-Normal.d77cf6760641cd3d9686.otf",
     "static/media/TELA 4.svg": "/adyen/static/media/TELA 4.50abb82862ab2517c09dd4943b3f73a0.svg",
     "static/media/LOGOADYEN.svg": "/adyen/static/media/LOGOADYEN.f97c0fd2a191f05c38cd9459b85f0a72.svg",
     "index.html": "/adyen/index.html",
-    "main.3a12a5f9.css.map": "/adyen/static/css/main.3a12a5f9.css.map",
-    "main.908d35a0.js.map": "/adyen/static/js/main.908d35a0.js.map"
+    "main.b1cbb5fa.css.map": "/adyen/static/css/main.b1cbb5fa.css.map",
+    "main.d865340d.js.map": "/adyen/static/js/main.d865340d.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a12a5f9.css",
-    "static/js/main.908d35a0.js"
+    "static/css/main.b1cbb5fa.css",
+    "static/js/main.d865340d.js"
   ]
 }
