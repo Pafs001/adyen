@@ -11,6 +11,9 @@ export default function Home() {
         <span className='span-bold'>casa <span className='color-primary span-light'>adyen</span></span>
       </div>
       
+      <div className='text-home-subtitle'>
+        Veja a opinião do nosso presidente Latam, Davi Strazza
+      </div>
 
       <div>
         <video width="800" controls onEnded={() => navigate("/gravador")}>

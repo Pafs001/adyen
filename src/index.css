@@ -99,24 +99,29 @@ table {
 .text-home-top {
   font-size: 64px;
   line-height: 74px;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
 }
 
 .logo-adyen{
   height: 40px;
-  margin: 24px 0 0 0;
+  margin: 8px 0 0 0;
 }
 
 .text-home-bottom {
   font-size: 48px;
   line-height: 58px;
-  margin: 10px 0 10px 0;
+  margin: 8px 0 8px 0;
+}
+
+.text-home-subtitle {
+  font-size: 38px;
+  margin: 8px 0 12px 0;
 }
 
 .text-home-bottom {
   font-size: 48px;
   line-height: 58px;
-  margin: 18px 0 18px 0;
+  margin: 8px 0 8px 0;
 }
 
 .text-home-next {
@@ -125,7 +130,7 @@ table {
   border-radius: 8px;
   font-size: 32px;
   text-align: center;
-  margin: 18px 0 18px 0;
+  margin: 8px 0 8px 0;
 }
 .span-light {
   font-weight: lighter;
