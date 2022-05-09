@@ -132,6 +132,16 @@ table {
   text-align: center;
   margin: 8px 0 8px 0;
 }
+
+.button-back {
+  border: 1px solid #00112c;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 32px;
+  text-align: center;
+  margin: 32px 0 8px 0;
+}
+
 .span-light {
   font-weight: lighter;
 }
@@ -145,6 +155,10 @@ table {
 
 .color-secondary {
   color: #00112c;
+}
+
+.color-white {
+  color: #FFF;
 }
 
 .row {

@@ -8,6 +8,7 @@ import {
 import "../index.css";
 import {
   useNavigate,
+  Link
 } from "react-router-dom";
 
 import { useFormik } from 'formik';
@@ -228,8 +229,11 @@ export default function GravarPalavras() {
         */}
         
       </div>
-      </div>
       
+      </div>
+      <div className='button-back'>
+        <Link to="/gravador" >Voltar</Link>
+      </div>
     </div>
   );
 };

@@ -18,6 +18,9 @@ export default function Gravador() {
           </div>
         </div>
       </div>
+      <div className='button-back'>
+        <Link to="/adyen" >Voltar</Link>
+      </div>
     </div>
   )
 }

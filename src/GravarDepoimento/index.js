@@ -7,6 +7,7 @@ import {
 
 import "../index.css";
 import {
+  Link,
   useNavigate,
 } from "react-router-dom";
 
@@ -229,7 +230,9 @@ export default function GravarDepoimento() {
         
       </div>
       </div>
-      
+      <div className='button-back'>
+        <Link to="/gravador" >Voltar</Link>
+      </div>
     </div>
   );
 };
